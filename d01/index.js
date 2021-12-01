@@ -5,6 +5,6 @@ const getNums = (data) => data.split('\n').filter((l) => l.length > 0).map((l) =
 const concatHighs = (highs) => highs.reduce((acc, c, i, arr) => (i > arr.length - 3) ? acc :[...acc, [arr[i], arr[i + 1], arr[i + 2]].reduce((sum, n) => sum + n, 0)], [])
 
 fs.readFile('./input', 'utf8', (err, data) => {
-  console.log(countHigher(getNums(data)))
-  console.log(countHigher(concatHighs(getNums(data))))
+  console.log('Part 1 =', countHigher(getNums(data)))
+  console.log('Part 2 =', countHigher(concatHighs(getNums(data))))
 })
